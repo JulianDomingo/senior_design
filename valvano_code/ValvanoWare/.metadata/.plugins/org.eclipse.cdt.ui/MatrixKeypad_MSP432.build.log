@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project MatrixKeypad_MSP432 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "MatrixKeypad_MSP432.out"  "MatrixKeypad_MSP432.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\MatrixKeypad_MSP432\Debug\MatrixKeypad_MSP432.out
+DEL /F "MatrixKeypadInit.pp" "MatrixKeypadInterrupts.pp" "MatrixKeypadScan.pp" "MatrixKeypadTestMain.pp" "msp432_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\MatrixKeypad_MSP432\Debug\MatrixKeypadInit.pp
+DEL /F "MatrixKeypadInit.obj" "MatrixKeypadInterrupts.obj" "MatrixKeypadScan.obj" "MatrixKeypadTestMain.obj" "msp432_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\MatrixKeypad_MSP432\Debug\MatrixKeypadInit.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

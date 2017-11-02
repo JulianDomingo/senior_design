@@ -1,0 +1,16 @@
+
+**** Clean-only build of configuration Debug for project PointerTrafficLight_MSP432asm ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "PointerTrafficLight_MSP432asm.out"  "PointerTrafficLight_MSP432asm.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\PointerTrafficLight_MSP432asm\Debug\PointerTrafficLight_MSP432asm.out
+DEL /F "msp432_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\PointerTrafficLight_MSP432asm\Debug\msp432_startup_ccs.pp
+DEL /F "PointerTrafficLight.obj" "SysTick.obj" "msp432_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\PointerTrafficLight_MSP432asm\Debug\PointerTrafficLight.obj
+DEL /F "PointerTrafficLight.pp" "SysTick.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\PointerTrafficLight_MSP432asm\Debug\PointerTrafficLight.pp
+'Finished clean'
+' '
+
+**** Build Finished ****

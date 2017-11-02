@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project InputCapture_MSP432 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "InputCapture_MSP432.out"  "InputCapture_MSP432.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\InputCapture_MSP432\Debug\InputCapture_MSP432.out
+DEL /F "InputCapture.pp" "InputCaptureTestMain.pp" "msp432_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\InputCapture_MSP432\Debug\InputCapture.pp
+DEL /F "InputCapture.obj" "InputCaptureTestMain.obj" "msp432_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\InputCapture_MSP432\Debug\InputCapture.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project UARTInts_MSP432 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "UARTInts_MSP432.out"  "UARTInts_MSP432.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\UARTInts_MSP432\Debug\UARTInts_MSP432.out
+DEL /F "UART.pp" "UARTIntsTestMain.pp" "msp432_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\UARTInts_MSP432\Debug\UART.pp
+DEL /F "UART.obj" "UARTIntsTestMain.obj" "msp432_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\UARTInts_MSP432\Debug\UART.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

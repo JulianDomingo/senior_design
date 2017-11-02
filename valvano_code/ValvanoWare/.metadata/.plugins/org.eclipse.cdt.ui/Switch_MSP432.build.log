@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project Switch_MSP432 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "Switch_MSP432.out"  "Switch_MSP432.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\Switch_MSP432\Debug\Switch_MSP432.out
+DEL /F "Switch.pp" "SwitchTestMain.pp" "msp432_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\Switch_MSP432\Debug\Switch.pp
+DEL /F "Switch.obj" "SwitchTestMain.obj" "msp432_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\Switch_MSP432\Debug\Switch.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project PointerLineTracker_MSP432 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "PointerLineTracker_MSP432.out"  "PointerLineTracker_MSP432.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\PointerLineTracker_MSP432\Debug\PointerLineTracker_MSP432.out
+DEL /F "PointerLineTracker.pp" "SysTick.pp" "msp432_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\PointerLineTracker_MSP432\Debug\PointerLineTracker.pp
+DEL /F "PointerLineTracker.obj" "SysTick.obj" "msp432_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\PointerLineTracker_MSP432\Debug\PointerLineTracker.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

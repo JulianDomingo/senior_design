@@ -1,0 +1,9 @@
+.\objects\ssr.o: SSR.c
+.\objects\ssr.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\ssr.o: E:\Keil_v5\ARM\PACK\TexasInstruments\MSP432\1.0.0\Device\Include\msp.h
+.\objects\ssr.o: E:\Keil_v5\ARM\PACK\TexasInstruments\MSP432\1.0.0\Device\Include\msp432p401r.h
+.\objects\ssr.o: E:\Keil_v5\ARM\PACK\TexasInstruments\MSP432\1.0.0\Device\Include\msp_compatibility.h
+.\objects\ssr.o: E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h
+.\objects\ssr.o: E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h
+.\objects\ssr.o: E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h
+.\objects\ssr.o: E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h

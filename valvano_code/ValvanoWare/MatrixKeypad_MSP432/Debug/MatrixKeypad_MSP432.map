@@ -1,0 +1,341 @@
+******************************************************************************
+                  TI ARM Linker PC v5.2.4                      
+******************************************************************************
+>> Linked Mon Jun 13 16:07:53 2016
+
+OUTPUT FILE NAME:   <MatrixKeypad_MSP432.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00000701
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  MAIN                  00000000   00040000  000008b9  0003f747  R  X
+  INFO                  00200000   00004000  00000000  00004000  R  X
+  SRAM_CODE             01000000   00010000  00000000  00010000  RW X
+  SRAM_DATA             20000000   00010000  0000022d  0000fdd3  RW  
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    000008c0   000008c0    r-x
+  00000000    00000000    00000144   00000144    r-- .intvecs
+  00000144    00000144    00000724   00000724    r-x .text
+  00000868    00000868    00000019   00000019    r-- .const
+  00000888    00000888    00000038   00000038    r-- .cinit
+20000000    20000000    00000030   00000000    rw-
+  20000000    20000000    00000019   00000000    rw- .bss
+  2000001c    2000001c    00000014   00000000    rw- .data
+2000fe00    2000fe00    00000200   00000000    rw-
+  2000fe00    2000fe00    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    00000144     
+                  00000000    00000144     msp432_startup_ccs.obj (.intvecs)
+
+.text      0    00000144    00000724     
+                  00000144    000001e4     MatrixKeypadInit.obj (.text)
+                  00000328    000000f4     MatrixKeypadScan.obj (.text)
+                  0000041c    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.obj (.text)
+                  000004b8    0000009a     msp432_startup_ccs.obj (.text)
+                  00000552    0000007a     rtsv7M4_T_le_v4SPD16_eabi.lib : memset_t2.obj (.text)
+                  000005cc    0000006c                                   : autoinit.obj (.text)
+                  00000638    0000006a                                   : copy_decompress_rle.obj (.text)
+                  000006a2    00000002     --HOLE-- [fill = 0]
+                  000006a4    0000005c     MatrixKeypadInterrupts.obj (.text)
+                  00000700    00000050     rtsv7M4_T_le_v4SPD16_eabi.lib : boot.obj (.text)
+                  00000750    0000004c                                   : cpy_tbl.obj (.text)
+                  0000079c    00000044                                   : exit.obj (.text)
+                  000007e0    00000038     MatrixKeypadTestMain.obj (.text)
+                  00000818    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
+                  00000830    00000014                                   : _lock.obj (.text)
+                  00000844    0000000e                                   : copy_decompress_none.obj (.text:decompress:none)
+                  00000852    0000000c                                   : copy_zero_init.obj (.text:decompress:ZI)
+                  0000085e    00000006                                   : copy_decompress_rle.obj (.text:decompress:rle24)
+                  00000864    00000004                                   : pre_init.obj (.text)
+
+.const     0    00000868    00000019     
+                  00000868    00000019     MatrixKeypadScan.obj (.const)
+
+.cinit     0    00000888    00000038     
+                  00000888    0000000f     (.cinit..data.load) [load image, compression = rle]
+                  00000897    00000001     --HOLE-- [fill = 0]
+                  00000898    0000000c     (__TI_handler_table)
+                  000008a4    00000004     --HOLE-- [fill = 0]
+                  000008a8    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  000008b0    00000010     (__TI_cinit_table)
+
+.bss       0    20000000    00000019     UNINITIALIZED
+                  20000000    00000010     (.common:Fifo)
+                  20000010    00000004     (.common:GetI)
+                  20000014    00000004     (.common:PutI)
+                  20000018    00000001     (.common:Button)
+
+.data      0    2000001c    00000014     UNINITIALIZED
+                  2000001c    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.data)
+                  20000024    00000008                                   : exit.obj (.data)
+                  2000002c    00000004                                   : stkdepth_vars.obj (.data)
+
+.TI.noinit 
+*          0    20000000    00000000     UNINITIALIZED
+
+.TI.persistent 
+*          0    2000001c    00000000     UNINITIALIZED
+
+.stack     0    2000fe00    00000200     UNINITIALIZED
+                  2000fe00    00000200     --HOLE--
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 000008b0 records: 2, size/record: 8, table size: 16
+	.data: load addr=00000888, load size=0000000f bytes, run addr=2000001c, run size=00000014 bytes, compression=rle
+	.bss: load addr=000008a8, load size=00000008 bytes, run addr=20000000, run size=00000019 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00000898 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_rle24
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                    
+-------   ----                    
+0000050d  ADC14_IRQHandler        
+00000515  AES256_IRQHandler       
+20000018  Button                  
+0000079d  C$$EXIT                 
+000004e9  COMP_E0_IRQHandler      
+000004eb  COMP_E1_IRQHandler      
+000004df  CS_IRQHandler           
+00000519  DMA_ERR_IRQHandler      
+00000521  DMA_INT0_IRQHandler     
+0000051f  DMA_INT1_IRQHandler     
+0000051d  DMA_INT2_IRQHandler     
+0000051b  DMA_INT3_IRQHandler     
+000004d7  DebugMon_Handler        
+0000052f  DisableInterrupts       
+000004fd  EUSCIA0_IRQHandler      
+000004ff  EUSCIA1_IRQHandler      
+00000501  EUSCIA2_IRQHandler      
+00000503  EUSCIA3_IRQHandler      
+00000505  EUSCIB0_IRQHandler      
+00000507  EUSCIB1_IRQHandler      
+00000509  EUSCIB2_IRQHandler      
+0000050b  EUSCIB3_IRQHandler      
+00000535  EnableInterrupts        
+00000545  EndCritical             
+000004e7  FLCTL_IRQHandler        
+000004e5  FPU_IRQHandler          
+00000195  Fifo_Get                
+00000145  Fifo_Init               
+0000015f  Fifo_Put                
+000001c9  Fifo_Size               
+20000010  GetI                    
+000001d7  MatrixKeypad_Arm        
+000002d3  MatrixKeypad_Get        
+000003df  MatrixKeypad_In         
+00000221  MatrixKeypad_Init       
+00000329  MatrixKeypad_Scan       
+000004e1  PCM_IRQHandler          
+00000523  PORT1_IRQHandler        
+00000525  PORT2_IRQHandler        
+00000527  PORT3_IRQHandler        
+000006a5  PORT4_IRQHandler        
+0000052b  PORT5_IRQHandler        
+0000052d  PORT6_IRQHandler        
+000004dd  PSS_IRQHandler          
+000004d9  PendSV_Handler          
+20000014  PutI                    
+00000517  RTC_C_IRQHandler        
+UNDEFED   SHT$$INIT_ARRAY$$Base   
+UNDEFED   SHT$$INIT_ARRAY$$Limit  
+000004d5  SVC_Handler             
+00000868  ScanTab                 
+0000053b  StartCritical           
+000004db  SysTick_Handler         
+0000050f  T32_INT1_IRQHandler     
+00000511  T32_INT2_IRQHandler     
+00000513  T32_INTC_IRQHandler     
+000006c7  TA0_0_IRQHandler        
+000004ef  TA0_N_IRQHandler        
+000004f1  TA1_0_IRQHandler        
+000004f3  TA1_N_IRQHandler        
+000004f5  TA2_0_IRQHandler        
+000004f7  TA2_N_IRQHandler        
+000004f9  TA3_0_IRQHandler        
+000004fb  TA3_N_IRQHandler        
+4000480c  WDTCTL_SYM              
+000004e3  WDT_A_IRQHandler        
+0000054d  WaitForInterrupt        
+20010000  __STACK_END             
+00000200  __STACK_SIZE            
+000008b0  __TI_CINIT_Base         
+000008c0  __TI_CINIT_Limit        
+00000898  __TI_Handler_Table_Base 
+000008a4  __TI_Handler_Table_Limit
+000005cd  __TI_auto_init          
+20000024  __TI_cleanup_ptr        
+00000845  __TI_decompress_none    
+0000085f  __TI_decompress_rle24   
+20000028  __TI_dtors_ptr          
+00000000  __TI_static_base__      
+00000853  __TI_zero_init          
+00000553  __aeabi_memclr          
+00000553  __aeabi_memclr4         
+00000553  __aeabi_memclr8         
+0000041d  __aeabi_memcpy          
+0000041d  __aeabi_memcpy4         
+0000041d  __aeabi_memcpy8         
+00000555  __aeabi_memset          
+00000555  __aeabi_memset4         
+00000555  __aeabi_memset8         
+ffffffff  __binit__               
+ffffffff  __c_args__              
+2000fe00  __stack                 
+00000819  _args_main              
+00000701  _c_int00                
+2000001c  _lock                   
+0000083f  _nop                    
+00000837  _register_lock          
+00000831  _register_unlock        
+00000865  _system_pre_init        
+20000020  _unlock                 
+000007a1  abort                   
+ffffffff  binit                   
+00000751  copy_in                 
+000007a9  exit                    
+00000000  interruptVectors        
+000007e1  main                    
+2000002c  main_func_sp            
+0000041d  memcpy                  
+0000055b  memset                  
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                    
+-------   ----                    
+00000000  __TI_static_base__      
+00000000  interruptVectors        
+00000145  Fifo_Init               
+0000015f  Fifo_Put                
+00000195  Fifo_Get                
+000001c9  Fifo_Size               
+000001d7  MatrixKeypad_Arm        
+00000200  __STACK_SIZE            
+00000221  MatrixKeypad_Init       
+000002d3  MatrixKeypad_Get        
+00000329  MatrixKeypad_Scan       
+000003df  MatrixKeypad_In         
+0000041d  __aeabi_memcpy          
+0000041d  __aeabi_memcpy4         
+0000041d  __aeabi_memcpy8         
+0000041d  memcpy                  
+000004d5  SVC_Handler             
+000004d7  DebugMon_Handler        
+000004d9  PendSV_Handler          
+000004db  SysTick_Handler         
+000004dd  PSS_IRQHandler          
+000004df  CS_IRQHandler           
+000004e1  PCM_IRQHandler          
+000004e3  WDT_A_IRQHandler        
+000004e5  FPU_IRQHandler          
+000004e7  FLCTL_IRQHandler        
+000004e9  COMP_E0_IRQHandler      
+000004eb  COMP_E1_IRQHandler      
+000004ef  TA0_N_IRQHandler        
+000004f1  TA1_0_IRQHandler        
+000004f3  TA1_N_IRQHandler        
+000004f5  TA2_0_IRQHandler        
+000004f7  TA2_N_IRQHandler        
+000004f9  TA3_0_IRQHandler        
+000004fb  TA3_N_IRQHandler        
+000004fd  EUSCIA0_IRQHandler      
+000004ff  EUSCIA1_IRQHandler      
+00000501  EUSCIA2_IRQHandler      
+00000503  EUSCIA3_IRQHandler      
+00000505  EUSCIB0_IRQHandler      
+00000507  EUSCIB1_IRQHandler      
+00000509  EUSCIB2_IRQHandler      
+0000050b  EUSCIB3_IRQHandler      
+0000050d  ADC14_IRQHandler        
+0000050f  T32_INT1_IRQHandler     
+00000511  T32_INT2_IRQHandler     
+00000513  T32_INTC_IRQHandler     
+00000515  AES256_IRQHandler       
+00000517  RTC_C_IRQHandler        
+00000519  DMA_ERR_IRQHandler      
+0000051b  DMA_INT3_IRQHandler     
+0000051d  DMA_INT2_IRQHandler     
+0000051f  DMA_INT1_IRQHandler     
+00000521  DMA_INT0_IRQHandler     
+00000523  PORT1_IRQHandler        
+00000525  PORT2_IRQHandler        
+00000527  PORT3_IRQHandler        
+0000052b  PORT5_IRQHandler        
+0000052d  PORT6_IRQHandler        
+0000052f  DisableInterrupts       
+00000535  EnableInterrupts        
+0000053b  StartCritical           
+00000545  EndCritical             
+0000054d  WaitForInterrupt        
+00000553  __aeabi_memclr          
+00000553  __aeabi_memclr4         
+00000553  __aeabi_memclr8         
+00000555  __aeabi_memset          
+00000555  __aeabi_memset4         
+00000555  __aeabi_memset8         
+0000055b  memset                  
+000005cd  __TI_auto_init          
+000006a5  PORT4_IRQHandler        
+000006c7  TA0_0_IRQHandler        
+00000701  _c_int00                
+00000751  copy_in                 
+0000079d  C$$EXIT                 
+000007a1  abort                   
+000007a9  exit                    
+000007e1  main                    
+00000819  _args_main              
+00000831  _register_unlock        
+00000837  _register_lock          
+0000083f  _nop                    
+00000845  __TI_decompress_none    
+00000853  __TI_zero_init          
+0000085f  __TI_decompress_rle24   
+00000865  _system_pre_init        
+00000868  ScanTab                 
+00000898  __TI_Handler_Table_Base 
+000008a4  __TI_Handler_Table_Limit
+000008b0  __TI_CINIT_Base         
+000008c0  __TI_CINIT_Limit        
+20000010  GetI                    
+20000014  PutI                    
+20000018  Button                  
+2000001c  _lock                   
+20000020  _unlock                 
+20000024  __TI_cleanup_ptr        
+20000028  __TI_dtors_ptr          
+2000002c  main_func_sp            
+2000fe00  __stack                 
+20010000  __STACK_END             
+4000480c  WDTCTL_SYM              
+ffffffff  __binit__               
+ffffffff  __c_args__              
+ffffffff  binit                   
+UNDEFED   SHT$$INIT_ARRAY$$Base   
+UNDEFED   SHT$$INIT_ARRAY$$Limit  
+
+[109 symbols]

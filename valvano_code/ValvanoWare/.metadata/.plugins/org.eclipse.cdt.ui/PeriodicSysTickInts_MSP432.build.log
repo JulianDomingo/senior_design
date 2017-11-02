@@ -1,0 +1,15 @@
+
+**** Clean-only build of configuration Debug for project PeriodicSysTickInts_MSP432 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "PeriodicSysTickInts_MSP432.out"  "PeriodicSysTickInts_MSP432.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\PeriodicSysTickInts_MSP432\Debug\PeriodicSysTickInts_MSP432.out
+DEL /F "PeriodicSysTickInts.pp" "SysTickInts.pp" "msp432_startup_ccs.pp" 
+C:\Dropbox\ArmBook\MSP432\ValvanoWare\PeriodicSysTickInts_MSP432\Debug\PeriodicSysTickInts.pp
+Access is denied.
+DEL /F "PeriodicSysTickInts.obj" "SysTickInts.obj" "msp432_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\PeriodicSysTickInts_MSP432\Debug\PeriodicSysTickInts.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project ADCSWTrigger_MSP432 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "ADCSWTrigger_MSP432.out"  "ADCSWTrigger_MSP432.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\ADCSWTrigger_MSP432\Debug\ADCSWTrigger_MSP432.out
+DEL /F "ADC14.pp" "ADCTestMain.pp" "msp432_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\ADCSWTrigger_MSP432\Debug\ADC14.pp
+DEL /F "ADC14.obj" "ADCTestMain.obj" "msp432_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\ADCSWTrigger_MSP432\Debug\ADC14.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

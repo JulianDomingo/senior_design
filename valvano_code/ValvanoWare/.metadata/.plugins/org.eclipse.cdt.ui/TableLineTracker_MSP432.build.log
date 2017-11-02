@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project TableLineTracker_MSP432 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "TableLineTracker_MSP432.out"  "TableLineTracker_MSP432.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\TableLineTracker_MSP432\Debug\TableLineTracker_MSP432.out
+DEL /F "SysTick.pp" "TableLineTracker.pp" "msp432_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\TableLineTracker_MSP432\Debug\SysTick.pp
+DEL /F "SysTick.obj" "TableLineTracker.obj" "msp432_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\TableLineTracker_MSP432\Debug\SysTick.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

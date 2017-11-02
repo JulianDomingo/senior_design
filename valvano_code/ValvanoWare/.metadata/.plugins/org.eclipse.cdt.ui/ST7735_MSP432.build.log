@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project ST7735_MSP432 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "ST7735_MSP432.out"  "ST7735_MSP432.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\ST7735_MSP432\Debug\ST7735_MSP432.out
+DEL /F "ClockSystem.pp" "ST7735.pp" "ST7735TestMain.pp" "msp432_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\ST7735_MSP432\Debug\ClockSystem.pp
+DEL /F "ClockSystem.obj" "ST7735.obj" "ST7735TestMain.obj" "msp432_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\ST7735_MSP432\Debug\ClockSystem.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

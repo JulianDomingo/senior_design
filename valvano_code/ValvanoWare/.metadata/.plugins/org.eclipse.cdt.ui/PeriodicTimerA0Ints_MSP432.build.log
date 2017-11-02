@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project PeriodicTimerA0Ints_MSP432 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "PeriodicTimerA0Ints_MSP432.out"  "PeriodicTimerA0Ints_MSP432.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\PeriodicTimerA0Ints_MSP432\Debug\PeriodicTimerA0Ints_MSP432.out
+DEL /F "ClockSystem.pp" "PeriodicTimerA0Ints.pp" "TimerA0.pp" "msp432_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\PeriodicTimerA0Ints_MSP432\Debug\ClockSystem.pp
+DEL /F "ClockSystem.obj" "PeriodicTimerA0Ints.obj" "TimerA0.obj" "msp432_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\PeriodicTimerA0Ints_MSP432\Debug\ClockSystem.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

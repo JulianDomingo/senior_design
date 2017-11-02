@@ -1,0 +1,1 @@
+"./ClockSystem.obj" "./I2C0.obj" "./I2CTestMain.obj" "./LCD.obj" "./SysTick.obj" "./msp432_startup_ccs.obj" "../msp432p401r.cmd" -l"libc.a" 

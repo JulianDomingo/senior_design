@@ -1,0 +1,16 @@
+
+**** Clean-only build of configuration Debug for project MealyEngineControl_MSP432asm ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "MealyEngineControl_MSP432asm.out"  "MealyEngineControl_MSP432asm.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\MealyEngineControl_MSP432asm\Debug\MealyEngineControl_MSP432asm.out
+DEL /F "msp432_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\MealyEngineControl_MSP432asm\Debug\msp432_startup_ccs.pp
+DEL /F "EngineControl.obj" "SysTick.obj" "msp432_startup_ccs.obj" 
+DEL /F "EngineControl.pp" "SysTick.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\MealyEngineControl_MSP432asm\Debug\EngineControl.obj
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\MealyEngineControl_MSP432asm\Debug\EngineControl.pp
+'Finished clean'
+' '
+
+**** Build Finished ****

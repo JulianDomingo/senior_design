@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project 74HC595_MSP432 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "74HC595_MSP432.out"  "74HC595_MSP432.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\74HC595_MSP432\Debug\74HC595_MSP432.out
+DEL /F "74HC595.pp" "74HC595TestMain.pp" "ClockSystem.pp" "SysTick.pp" "msp432_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\74HC595_MSP432\Debug\74HC595.pp
+DEL /F "74HC595.obj" "74HC595TestMain.obj" "ClockSystem.obj" "SysTick.obj" "msp432_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\74HC595_MSP432\Debug\74HC595.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

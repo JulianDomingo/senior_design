@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project LCD_MSP432 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "LCD_MSP432.out"  "LCD_MSP432.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\LCD_MSP432\Debug\LCD_MSP432.out
+DEL /F "ClockSystem.pp" "LCD.pp" "LCDTestMain.pp" "SysTick.pp" "msp432_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\LCD_MSP432\Debug\ClockSystem.pp
+DEL /F "ClockSystem.obj" "LCD.obj" "LCDTestMain.obj" "SysTick.obj" "msp432_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\LCD_MSP432\Debug\ClockSystem.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

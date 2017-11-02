@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project TwoButtonVector_MSP432 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "TwoButtonVector_MSP432.out"  "TwoButtonVector_MSP432.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\TwoButtonVector_MSP432\Debug\TwoButtonVector_MSP432.out
+DEL /F "TwoButtonVector.pp" "msp432_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\TwoButtonVector_MSP432\Debug\TwoButtonVector.pp
+DEL /F "TwoButtonVector.obj" "msp432_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\TwoButtonVector_MSP432\Debug\TwoButtonVector.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

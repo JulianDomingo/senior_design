@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project LinearInterpolation_MSP432 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "LinearInterpolation_MSP432.out"  "LinearInterpolation_MSP432.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\LinearInterpolation_MSP432\Debug\LinearInterpolation_MSP432.out
+DEL /F "LinearInterpolation.pp" "Sine.pp" "msp432_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\LinearInterpolation_MSP432\Debug\LinearInterpolation.pp
+DEL /F "LinearInterpolation.obj" "Sine.obj" "msp432_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\LinearInterpolation_MSP432\Debug\LinearInterpolation.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

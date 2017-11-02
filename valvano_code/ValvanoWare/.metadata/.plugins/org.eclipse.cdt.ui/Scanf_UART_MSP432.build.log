@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project Scanf_UART_MSP432 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "Scanf_UART_MSP432.out"  "Scanf_UART_MSP432.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\Scanf_UART_MSP432\Debug\Scanf_UART_MSP432.out
+DEL /F "UART.pp" "main.pp" "msp432_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\Scanf_UART_MSP432\Debug\UART.pp
+DEL /F "UART.obj" "main.obj" "msp432_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\Scanf_UART_MSP432\Debug\UART.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

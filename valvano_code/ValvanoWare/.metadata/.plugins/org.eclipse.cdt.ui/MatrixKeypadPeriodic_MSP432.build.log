@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project MatrixKeypadPeriodic_MSP432 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "MatrixKeypadPeriodic_MSP432.out"  "MatrixKeypadPeriodic_MSP432.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\MatrixKeypadPeriodic_MSP432\Debug\MatrixKeypadPeriodic_MSP432.out
+DEL /F "MatrixKeypadPeriodic.pp" "MatrixKeypadPeriodicTestMain.pp" "msp432_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\MatrixKeypadPeriodic_MSP432\Debug\MatrixKeypadPeriodic.pp
+DEL /F "MatrixKeypadPeriodic.obj" "MatrixKeypadPeriodicTestMain.obj" "msp432_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\MatrixKeypadPeriodic_MSP432\Debug\MatrixKeypadPeriodic.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

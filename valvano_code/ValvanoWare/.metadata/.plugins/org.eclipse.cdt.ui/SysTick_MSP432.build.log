@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project SysTick_MSP432 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "SysTick_MSP432.out"  "SysTick_MSP432.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\SysTick_MSP432\Debug\SysTick_MSP432.out
+DEL /F "SysTick.pp" "SysTickTestMain.pp" "msp432_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\SysTick_MSP432\Debug\SysTick.pp
+DEL /F "SysTick.obj" "SysTickTestMain.obj" "msp432_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\SysTick_MSP432\Debug\SysTick.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

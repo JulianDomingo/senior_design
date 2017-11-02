@@ -1,0 +1,1 @@
+"./ADCTA0Trigger.obj" "./ADCTestMain.obj" "./ClockSystem.obj" "./msp432_startup_ccs.obj" "../msp432p401r.cmd" -l"libc.a" 

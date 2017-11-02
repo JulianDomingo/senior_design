@@ -1,0 +1,16 @@
+
+**** Clean-only build of configuration Debug for project RTOS_MSP432 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "RTOS_MSP432.out"  "RTOS_MSP432.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\RTOS_MSP432\Debug\RTOS_MSP432.out
+DEL /F "ClockSystem.pp" "msp432_startup_ccs.pp" "os.pp" "user.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\RTOS_MSP432\Debug\ClockSystem.pp
+DEL /F "ClockSystem.obj" "OSasm.obj" "msp432_startup_ccs.obj" "os.obj" "user.obj" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\RTOS_MSP432\Debug\ClockSystem.obj
+DEL /F "OSasm.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\RTOS_MSP432\Debug\OSasm.pp
+'Finished clean'
+' '
+
+**** Build Finished ****

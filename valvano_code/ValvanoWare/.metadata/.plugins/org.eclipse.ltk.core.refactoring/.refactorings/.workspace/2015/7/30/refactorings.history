@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Squarewaves_MSP430asm&apos; to &apos;Squarewaves_MSP432asm&apos;" description="Rename resource &apos;Squarewaves_MSP430asm&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Squarewaves_MSP430asm" name="Squarewaves_MSP432asm" stamp="1437422099319" updateReferences="true"/>
+</session>

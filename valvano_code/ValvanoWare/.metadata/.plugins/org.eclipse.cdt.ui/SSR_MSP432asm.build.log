@@ -1,0 +1,16 @@
+
+**** Clean-only build of configuration Debug for project SSR_MSP432asm ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "SSR_MSP432asm.out"  "SSR_MSP432asm.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\SSR_MSP432asm\Debug\SSR_MSP432asm.out
+DEL /F "msp432_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\SSR_MSP432asm\Debug\msp432_startup_ccs.pp
+DEL /F "SSR.obj" "msp432_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\SSR_MSP432asm\Debug\SSR.obj
+DEL /F "SSR.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\SSR_MSP432asm\Debug\SSR.pp
+'Finished clean'
+' '
+
+**** Build Finished ****

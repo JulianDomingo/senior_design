@@ -1,0 +1,16 @@
+
+**** Clean-only build of configuration Debug for project Squarewaves_MSP430asm ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "Squarewaves_MSP430asm.out"  "Squarewaves_MSP430asm.hex" 
+Could Not Find E:\Dropbox\ArmBook\MSP432\ValvanoWare\Squarewaves_MSP430asm\Debug\Squarewaves_MSP430asm.out
+DEL /F "msp432_startup_ccs.pp" 
+Could Not Find E:\Dropbox\ArmBook\MSP432\ValvanoWare\Squarewaves_MSP430asm\Debug\msp432_startup_ccs.pp
+DEL /F "Squarewaves.obj" "msp432_startup_ccs.obj" 
+Could Not Find E:\Dropbox\ArmBook\MSP432\ValvanoWare\Squarewaves_MSP430asm\Debug\Squarewaves.obj
+DEL /F "Squarewaves.pp" 
+Could Not Find E:\Dropbox\ArmBook\MSP432\ValvanoWare\Squarewaves_MSP430asm\Debug\Squarewaves.pp
+'Finished clean'
+' '
+
+**** Build Finished ****

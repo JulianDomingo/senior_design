@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project Stepper_MSP432 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "Stepper_MSP432.out"  "Stepper_MSP432.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\Stepper_MSP432\Debug\Stepper_MSP432.out
+DEL /F "SysTick.pp" "main.pp" "msp432_startup_ccs.pp" "stepper.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\Stepper_MSP432\Debug\SysTick.pp
+DEL /F "SysTick.obj" "main.obj" "msp432_startup_ccs.obj" "stepper.obj" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\Stepper_MSP432\Debug\SysTick.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

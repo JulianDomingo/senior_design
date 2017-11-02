@@ -1,0 +1,16 @@
+
+**** Clean-only build of configuration Debug for project GPIO_MSP432asm ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "GPIO_MSP432asm.out"  "GPIO_MSP432asm.hex" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\GPIO_MSP432asm\Debug\GPIO_MSP432asm.out
+DEL /F "msp432_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\GPIO_MSP432asm\Debug\msp432_startup_ccs.pp
+DEL /F "GPIO.obj" "msp432_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\GPIO_MSP432asm\Debug\GPIO.obj
+DEL /F "GPIO.pp" 
+Could Not Find C:\Dropbox\ArmBook\MSP432\ValvanoWare\GPIO_MSP432asm\Debug\GPIO.pp
+'Finished clean'
+' '
+
+**** Build Finished ****

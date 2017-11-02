@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ClockSystem_MSP432/main.c&apos; to &apos;ClockSystemTestMain.c&apos;" description="Rename resource &apos;main.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="main.c" name="ClockSystemTestMain.c" stamp="1430226592919" updateReferences="true"/>
+</session>

@@ -1,0 +1,11 @@
+
+**** Clean-only build of configuration Debug for project LinearInterpolation_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "LinearInterpolation_4C123.out"  "LinearInterpolation_4C123.hex" 
+DEL /F "LinearInterpolation.pp" "Sine.pp" "msp432_startup_ccs.pp" 
+DEL /F "LinearInterpolation.obj" "Sine.obj" "msp432_startup_ccs.obj" 
+'Finished clean'
+' '
+
+**** Build Finished ****
