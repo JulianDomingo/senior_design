@@ -9,12 +9,14 @@
 
 #include "classify.h"
 
+// Change as specified
 static const double dac_voltage = 3.3;
 static const double target_voltage = 2.75;
 static const double trim_error_margin = 0.05;
 
 
-double *get_strict_linear_mapping(size_t size)
+double 
+*get_strict_linear_mapping(size_t size)
 {
     double voltage_increment = dac_voltage / (double) size;         
     double *strict_linear = (double *) malloc(size * sizeof(double)); 
@@ -28,39 +30,80 @@ double *get_strict_linear_mapping(size_t size)
 }
 
 
-double root(double input, double n)
+double 
+root(double input, double n)
 {
     return pow(input, (1.0 / n));
 }
 
 
-bool is_voltage_within_error_margin(double v1, double v2, double error_margin)
+bool 
+is_voltage_within_error_margin(double v1, double v2, double error_margin)
 {
     return (fabs(v1 - v2) <= error_margin);
 }
 
 
-double *generate_sample_curve(signal_class class, size_t size)
+/*
+ * Generates test signals of the following type:
+ *
+ * 1. Linear
+ * 2. Quadratic
+ * 3. Cubic
+ * 4. Quartic
+ * 5. TODO: Exponential
+ */
+double 
+*generate_sample_curve(signal_class class, size_t size)
 {
-    // TODO: Generate new curve, making sure to filter out values which don't
-    // make the curve a particular fit (i.e. [1, 2, 3, 4, 5] -> [1, 4] for quadratic)
-    //
     // TODO: Later on, try adding slight noise to the curve and ensure the classifier
     // still successfully classifies when noise is negligible.
     double *curve = (double *) malloc(size * sizeof(double));
+    double voltage_increment = dac_voltage / (double) size;         
+    double mu = 0.0;
+    double sigma = 1.0;
 
+    for (int i = 0; i < size; i += 1) 
+    {
+        curve[i] = (double) (((double) i) * voltage_increment);
+    }
+
+    // TODO: Use commented-out code once integrated with HW 
+    /*int counter = 0;
+    while (counter < size)
+    {
+        curve[counter] = ADC_In();
+        counter += 1;    
+    }*/
+
+    // TODO: remove below code once able to read input from ADC
     switch (class)
     {
         case linear:
+            // Already linear, so only add noise
+            /*for (int i = 0; i < size; i += 1)*/
+            /*{*/
+                /*curve[i] += randn(mu, sigma);*/
+            /*}*/
 
             break;
-        case quadratic:
-            
-            break;
-        case cubic:
+
+        case exponential:
+            for (int i = 0; i < size; i += 1)
+            {
+                curve[i] = exp(curve[i]); 
+                    // + randn(mu, sigma);
+            }
 
             break;
-        case quartic:
+
+        default:
+            // Quadratic, Cubic, Quartic
+            for (int i = 0; i < size; i += 1)
+            {
+                curve[i] = pow(curve[i], (double) class);
+                    // + randn(mu, sigma);
+            }
 
             break;
     }
@@ -69,7 +112,8 @@ double *generate_sample_curve(signal_class class, size_t size)
 }
 
 
-bool can_fit_strict_linear(double *curve_to_test, double *strict_linear, size_t size)
+bool 
+can_fit_strict_linear(double *curve_to_test, double *strict_linear, size_t size)
 {
     // Must first determine error margin based on precision of DAC.
     double strict_linear_error_margin = target_voltage / (double) size;
@@ -90,23 +134,23 @@ bool can_fit_strict_linear(double *curve_to_test, double *strict_linear, size_t 
         }
     }
 
-    bool res = (is_voltage_within_error_margin(
+    return (is_voltage_within_error_margin(
                 target_voltage,
                 curve_to_test[closest_input_value],
                 trim_error_margin));
-
-    return res;
 }
 
 
-bool can_fit_monotonic(double *curve_to_test, size_t size)
+bool 
+can_fit_monotonic(double *curve_to_test, size_t size)
 {
     // TODO: Implement binary search on curve_to_test
     return false;
 }
 
 
-void transform_original_curve(
+void 
+linearize_original_curve(
         size_t size,
         double (*transformed)[size], 
         double **original_curve, 
@@ -115,65 +159,104 @@ void transform_original_curve(
     for (int i = 0; i < size; i += 1) {
         // TODO: Potentially change to transform only a subset of the points 
         // instead of the entire curve. 
-        *transformed[i] = root((double) *original_curve[i], (double) class); 
+        (*transformed)[i] = root((double) (*original_curve)[i], (double) class); 
     }
 }
 
 
-int main()
+double 
+randn (double mu, double sigma)
+{
+    double U1, U2, W, mult;
+    static double X1, X2;
+    static int call = 0;
+
+    if (call == 1)
+    {
+        call = !call;
+        return (mu + sigma * (double) X2);
+    }
+
+    do
+    {
+        U1 = -1 + ((double) rand () / RAND_MAX) * 2;
+        U2 = -1 + ((double) rand () / RAND_MAX) * 2;
+        W = pow (U1, 2) + pow (U2, 2);
+    }
+    while (W >= 1 || W == 0);
+
+    mult = sqrt ((-2 * log (W)) / W);
+    X1 = U1 * mult;
+    X2 = U2 * mult;
+
+    call = !call;
+
+    return (mu + sigma * (double) X1);
+}
+
+
+int 
+main()
 {
     signal_class result_class = undetermined;
 
     uint8_t n = 12;
     uint8_t base = 2;
-    orig_size_t orig_size = pow(base, n); 
+    size_t orig_size = pow(base, n); 
 
-    double *strict_linear = get_strict_linear_mapping(orig_size);
-
+    double *strict_linear = generate_sample_curve(linear, orig_size);
     double transformed[orig_size];
+
+    double *original_curve = generate_sample_curve(cubic, orig_size);
 
     for (int class = linear; class <= exponential; class += 1)
     {
-        double *original_curve = generate_sample_curve(class, orig_size);
-
         switch (class)
         {
             case linear:
+                printf("Testing linear...\n");
                 if (can_fit_strict_linear(original_curve, strict_linear, orig_size) ||
                     can_fit_monotonic(original_curve, orig_size))
                 {
                     result_class = linear;
                     printf("The signal was classified as linear.\n");
+                    exit(EXIT_SUCCESS);
                 }
 
                 break;
 
             case exponential:
-                memcpy(transformed, original_curve, orig_size * orig_sizeof(double));
+                /*memcpy(transformed, original_curve, orig_size * sizeof(double));*/
 
                 // TODO: Figure out how to trasnform without natural log
-
-                printf("The signal was classified as exponential.\n");
+                /*printf("The signal was classified as exponential.\n");*/
+                /*exit(EXIT_SUCCESS);*/
 
                 break;
 
             default:
-                // Quadratic, Cubic, and Quartic inputs.
-                memcpy(transformed, original_curve, orig_size * orig_sizeof(double));
-                transform_original_curve(orig_size, &transformed, &original_curve, class);
+                printf("Testing %s...\n", (class == 2) ? "quadratic" : (class == 3) ? 
+                        "cubic" : "quartic");
 
-                if (can_fit_strict_linear(original_curve, strict_linear, orig_size) ||
+                // Quadratic, Cubic, and Quartic inputs.
+                memcpy(transformed, original_curve, orig_size * sizeof(double));
+                linearize_original_curve(orig_size, &transformed, &original_curve, class);
+
+                if (can_fit_strict_linear(transformed, strict_linear, orig_size) ||
                     can_fit_monotonic(transformed, orig_size))
                 {
                     switch (class) 
                     {
                         case quadratic:
+                            result_class = quadratic;
                             printf("The signal was classified as quadratic.\n");
                             break;
                         case cubic:
+                            result_class = cubic;
                             printf("The signal was classified as cubic.\n");
                             break;
                         case quartic:
+                            result_class = quartic;
                             printf("The signal was classified as quartic.\n");
                             break;
                     }
