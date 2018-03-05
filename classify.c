@@ -13,6 +13,7 @@
 static const double dac_voltage = 3.3;
 static const double target_voltage = 2.75;
 static const double trim_error_margin = 0.05;
+static const double noise_threshold = 0.005;
 
 
 double 
@@ -56,12 +57,10 @@ is_voltage_within_error_margin(double v1, double v2, double error_margin)
 double 
 *generate_sample_curve(signal_class class, size_t size)
 {
-    // TODO: Later on, try adding slight noise to the curve and ensure the classifier
-    // still successfully classifies when noise is negligible.
     double *curve = (double *) malloc(size * sizeof(double));
     double voltage_increment = dac_voltage / (double) size;         
-    double mu = 0.0;
-    double sigma = 1.0;
+    /*double mu = 0.0;*/
+    /*double sigma = 1.0;*/
 
     for (int i = 0; i < size; i += 1) 
     {
@@ -81,18 +80,17 @@ double
     {
         case linear:
             // Already linear, so only add noise
-            /*for (int i = 0; i < size; i += 1)*/
-            /*{*/
-                /*curve[i] += randn(mu, sigma);*/
-            /*}*/
+            for (int i = 0; i < size; i += 1)
+            {
+                curve[i] += noise_threshold; 
+            }
 
             break;
 
         case exponential:
             for (int i = 0; i < size; i += 1)
             {
-                curve[i] = exp(curve[i]); 
-                    // + randn(mu, sigma);
+                curve[i] = exp(curve[i]) + noise_threshold; 
             }
 
             break;
@@ -101,8 +99,7 @@ double
             // Quadratic, Cubic, Quartic
             for (int i = 0; i < size; i += 1)
             {
-                curve[i] = pow(curve[i], (double) class);
-                    // + randn(mu, sigma);
+                curve[i] = pow(curve[i], (double) class) + noise_threshold;
             }
 
             break;
@@ -164,37 +161,6 @@ linearize_original_curve(
 }
 
 
-double 
-randn (double mu, double sigma)
-{
-    double U1, U2, W, mult;
-    static double X1, X2;
-    static int call = 0;
-
-    if (call == 1)
-    {
-        call = !call;
-        return (mu + sigma * (double) X2);
-    }
-
-    do
-    {
-        U1 = -1 + ((double) rand () / RAND_MAX) * 2;
-        U2 = -1 + ((double) rand () / RAND_MAX) * 2;
-        W = pow (U1, 2) + pow (U2, 2);
-    }
-    while (W >= 1 || W == 0);
-
-    mult = sqrt ((-2 * log (W)) / W);
-    X1 = U1 * mult;
-    X2 = U2 * mult;
-
-    call = !call;
-
-    return (mu + sigma * (double) X1);
-}
-
-
 int 
 main()
 {
@@ -207,7 +173,7 @@ main()
     double *strict_linear = generate_sample_curve(linear, orig_size);
     double transformed[orig_size];
 
-    double *original_curve = generate_sample_curve(cubic, orig_size);
+    double *original_curve = generate_sample_curve(quartic, orig_size);
 
     for (int class = linear; class <= exponential; class += 1)
     {
