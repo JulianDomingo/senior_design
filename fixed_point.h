@@ -1,6 +1,8 @@
 #ifndef FIXED_POINT_H
 #define FIXED_POINT_H
 
+#include <stdint.h>
+
 #define base 16
 #define f (1 << 16)
 
@@ -175,10 +177,6 @@ int mult_fp_int(int x, int n);
 int mult_fp(int x, int y);
 int div_fp(int x, int y);
 int div_fp_int(int x, int n);
-int fp_abs(int fp);
-int fp_nth_root(int x, int n);
-int fp_pow(int fp_base, int n);
-int32_t sqrt_int_fp( int32_t v);
 
 int 
 convert_int_to_fp(int n)
