@@ -1,4 +1,5 @@
 #include <stdbool.h>
+#include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
@@ -160,78 +161,78 @@ linearize_original_curve(
 }
 
 
-int 
-main()
-{
-    signal_class result_class = undetermined;
+/*int */
+/*main()*/
+/*{*/
+    /*signal_class result_class = undetermined;*/
 
-    uint8_t n = 12;
-    uint8_t base = 2;
-    size_t orig_size = pow(base, n); 
+    /*uint8_t n = 12;*/
+    /*uint8_t base = 2;*/
+    /*size_t orig_size = pow(base, n); */
 
-    double *strict_linear = generate_sample_curve(linear, orig_size);
-    double transformed[orig_size];
+    /*double *strict_linear = generate_sample_curve(linear, orig_size);*/
+    /*double transformed[orig_size];*/
 
-    double *original_curve = generate_sample_curve(quartic, orig_size);
+    /*double *original_curve = generate_sample_curve(quartic, orig_size);*/
 
-    for (int class = linear; class <= exponential; class += 1)
-    {
-        switch (class)
-        {
-            case linear:
-                printf("Testing linear...\n");
-                if (can_fit_strict_linear(original_curve, strict_linear, orig_size) ||
-                    can_fit_monotonic(original_curve, orig_size))
-                {
-                    result_class = linear;
-                    printf("The signal was classified as linear.\n");
-                    exit(EXIT_SUCCESS);
-                }
+    /*for (int class = linear; class <= exponential; class += 1)*/
+    /*{*/
+        /*switch (class)*/
+        /*{*/
+            /*case linear:*/
+                /*printf("Testing linear...\n");*/
+                /*if (can_fit_strict_linear(original_curve, strict_linear, orig_size) ||*/
+                    /*can_fit_monotonic(original_curve, orig_size))*/
+                /*{*/
+                    /*result_class = linear;*/
+                    /*printf("The signal was classified as linear.\n");*/
+                    /*exit(EXIT_SUCCESS);*/
+                /*}*/
 
-                break;
+                /*break;*/
 
-            case exponential:
+            /*case exponential:*/
+                /*[>memcpy(transformed, original_curve, orig_size * sizeof(double));<]*/
+
+                /*// TODO: Figure out how to trasnform without natural log*/
+                /*[>printf("The signal was classified as exponential.\n");<]*/
+                /*[>exit(EXIT_SUCCESS);<]*/
+
+                /*break;*/
+
+            /*default:*/
+                /*printf("Testing %s...\n", (class == 2) ? "quadratic" : (class == 3) ? */
+                        /*"cubic" : "quartic");*/
+
+                /*// Quadratic, Cubic, and Quartic inputs.*/
                 /*memcpy(transformed, original_curve, orig_size * sizeof(double));*/
+                /*linearize_original_curve(orig_size, &transformed, &original_curve, class);*/
 
-                // TODO: Figure out how to trasnform without natural log
-                /*printf("The signal was classified as exponential.\n");*/
-                /*exit(EXIT_SUCCESS);*/
+                /*if (can_fit_strict_linear(transformed, strict_linear, orig_size) ||*/
+                    /*can_fit_monotonic(transformed, orig_size))*/
+                /*{*/
+                    /*switch (class) */
+                    /*{*/
+                        /*case quadratic:*/
+                            /*result_class = quadratic;*/
+                            /*printf("The signal was classified as quadratic.\n");*/
+                            /*break;*/
+                        /*case cubic:*/
+                            /*result_class = cubic;*/
+                            /*printf("The signal was classified as cubic.\n");*/
+                            /*break;*/
+                        /*case quartic:*/
+                            /*result_class = quartic;*/
+                            /*printf("The signal was classified as quartic.\n");*/
+                            /*break;*/
+                    /*}*/
 
-                break;
+                    /*exit(EXIT_SUCCESS);*/
+                /*}*/
+        /*}*/
+    /*}*/
 
-            default:
-                printf("Testing %s...\n", (class == 2) ? "quadratic" : (class == 3) ? 
-                        "cubic" : "quartic");
+    /*if (result_class == undetermined) { printf("The signal was unable to be classified.\n"); }*/
 
-                // Quadratic, Cubic, and Quartic inputs.
-                memcpy(transformed, original_curve, orig_size * sizeof(double));
-                linearize_original_curve(orig_size, &transformed, &original_curve, class);
-
-                if (can_fit_strict_linear(transformed, strict_linear, orig_size) ||
-                    can_fit_monotonic(transformed, orig_size))
-                {
-                    switch (class) 
-                    {
-                        case quadratic:
-                            result_class = quadratic;
-                            printf("The signal was classified as quadratic.\n");
-                            break;
-                        case cubic:
-                            result_class = cubic;
-                            printf("The signal was classified as cubic.\n");
-                            break;
-                        case quartic:
-                            result_class = quartic;
-                            printf("The signal was classified as quartic.\n");
-                            break;
-                    }
-
-                    exit(EXIT_SUCCESS);
-                }
-        }
-    }
-
-    if (result_class == undetermined) { printf("The signal was unable to be classified.\n"); }
-
-    return 0;
-}
+    /*return 0;*/
+/*}*/
